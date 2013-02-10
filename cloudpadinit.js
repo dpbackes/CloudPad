@@ -3,7 +3,7 @@ window.onload = function()
   if(apiKey == "apiKeyNOTSET")
   {
   	$("body").attr('contenteditable','false');
-  	$("body").html("<div>Please enter your api key from <a href=\"http://www.mongohq.com\">MongoHQ</a> below and press 'enter'.</div><br><div><input id=\"apiKey\" type=\"text\" />");
+  	$("body").html("<div><ol><li>Create an account at <a href=\"http://www.mongohq.com\">MongoHQ</a></li><li>Enter your api token below and press enter. You can find your MongoHQ api token on the right hand side of your account overview page at MongoHQ.</li></div><br><div><input id=\"apiKey\" type=\"text\" />");
   	
   	//look for the enter key
   	 $('#apiKey').keypress(function(e) {
