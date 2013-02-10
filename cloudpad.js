@@ -23,7 +23,7 @@ window.onload = function() {
 							url: docURL,
 							type: 'PUT',
 							data: { _apikey: apiKey,
-										document: { "_id" : "test", "text" : $("body").html() }  
+										document: { "text" : $("body").html() }  
 										},
 							success: function(resposne) { 
 												console.log("success\n");
