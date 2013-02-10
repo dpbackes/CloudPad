@@ -5,7 +5,7 @@ window.onload = function() {
 				$.ajax({
 					url: docURL,
 					type: 'GET',
-					data: { _apikey: "API_KEY"
+					data: { _apikey: apiKey
 								},
 					success: function(response) { 
 										$("body").html(response.text);
@@ -22,7 +22,7 @@ window.onload = function() {
 						$.ajax({
 							url: docURL,
 							type: 'PUT',
-							data: { _apikey: "API_KEY",
+							data: { _apikey: apiKey,
 										document: { "_id" : "test", "text" : $("body").html() }  
 										},
 							success: function(resposne) { 
