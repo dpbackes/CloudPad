@@ -33,7 +33,7 @@ window.onload = function()
   													},
   										success: function(response) { 
   															//send them on to a proper CloudPad dataurl
-  															window.location = $(location).attr('href').replace("apiKeyNOTSET", $("#apiKey").val()).replace("cloudpadinit.js", "cloudpad.js");
+  															window.location = $(location).attr('href').replace("apiKeyNOTSET", apiKey).replace("cloudpadinit.js", "cloudpad.js");
   														},
   										error: function(response) { 
   													$("body").text("There was an error creating the document: "+JSON.stringify(response));																	
