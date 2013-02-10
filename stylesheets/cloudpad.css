@@ -1,0 +1,10 @@
+body {
+  background-color: #333333; 
+  color: #CCCCCC;
+  font-size:2rem;
+  font-family:monospace;
+  line-height:1.4;
+  max-width:60rem;
+  margin:0 auto;
+  padding:4rem;
+}
