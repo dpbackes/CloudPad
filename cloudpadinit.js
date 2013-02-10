@@ -29,7 +29,7 @@ window.onload = function()
   										url: "https://api.mongohq.com/databases/CloudPad/collections/notes/documents",
   										type: 'POST',
   										data: { _apikey: apiKey,
-  													document: { _id:"note0", text : "Congratulations! You have successfuly initialized CloudPad. Create a bookmark for this URL, then use the bookmark from any webbrowser to access your pad!" }  
+  													document: { _id:"note0", text : "Congratulations! You have successfuly initialized CloudPad. Create a bookmark for this URL, then use the bookmark from any web browser to access your pad!" }  
   													},
   										success: function(response) { 
   															//send them on to a proper CloudPad dataurl
