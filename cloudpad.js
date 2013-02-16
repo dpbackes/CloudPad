@@ -52,20 +52,20 @@ window.onload = function() {
 								document: { "text" : $("body").html(), "version" : version }  
 							},
 							success: function(resposne) { 
-								
+								updatePending = false;
 							},
 							error: function(stuff) { 
-								
+								updatePending = false;
 							}
 						});
 					}
 					else
 					{
+					
+						updatePending = false;
 						canUpdate = false;
 						$("body").text("CloudPad has been changed in another editor, please refresh your browser");
 					}
-					
-					updatePending = false;
 				},
 				error: function(response) { 
 					updatePending = false;	
