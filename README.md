@@ -18,6 +18,10 @@ HOWTO
 5. Enter your API Token into the form and you're all set!
 6. Repeat the process on any other devices you wish to have access to your CloudPad
 
+Notes
+=====
+Right now there is no versioning scheme and changes that are made on one device will not be automatically pushed to otherse. Therefore, it is a best practice to close CloudPad once you are done editing.
+
 FAQ
 ===
 
