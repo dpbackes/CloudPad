@@ -1,3 +1,4 @@
+var updatePending = false;
 var version = 0;
 var canUpdate = true;
 window.onload = function() {
@@ -22,8 +23,14 @@ window.onload = function() {
 	//updates the document with the current text	
 	var updateFunc = function()
 	{
+		if(updatePending)
+		{
+			//if there is still an update pending, we'll set a timer to update later
+			setTimeout(updateFunc, 1000);
+		}
 		if(canUpdate)
 		{
+			updatePending = true;
 			$.ajax({
 				url: docURL,
 				type: 'GET',
@@ -57,9 +64,11 @@ window.onload = function() {
 						canUpdate = false;
 						$("body").text("CloudPad has been changed in another editor, please refresh your browser");
 					}
+					
+					updatePending = false;
 				},
 				error: function(response) { 
-							
+					updatePending = false;	
 				}
 			});
 		}
