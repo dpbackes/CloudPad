@@ -1,6 +1,6 @@
-var updatePending = false;
 var version = 0;
 var canUpdate = true;
+var typingTimer;
 window.onload = function() {
   		
 				
@@ -23,14 +23,8 @@ window.onload = function() {
 	//updates the document with the current text	
 	var updateFunc = function()
 	{
-		if(updatePending)
-		{
-			//if there is still an update pending, we'll set a timer to update later
-			setTimeout(updateFunc, 1000);
-		}
 		if(canUpdate)
 		{
-			updatePending = true;
 			$.ajax({
 				url: docURL,
 				type: 'GET',
@@ -52,29 +46,36 @@ window.onload = function() {
 								document: { "text" : $("body").html(), "version" : version }  
 							},
 							success: function(resposne) { 
-								updatePending = false;
 							},
 							error: function(stuff) { 
-								updatePending = false;
 							}
 						});
 					}
 					else
 					{
-					
-						updatePending = false;
 						canUpdate = false;
 						$("body").text("CloudPad has been changed in another editor, please refresh your browser");
 					}
 				},
-				error: function(response) { 
-					updatePending = false;	
+				error: function(response) { 	
 				}
 			});
 		}
 	}
 	
-	$(document).keyup(updateFunc);
+	var typingDone = function()
+	{
+		typingTimer = setTimeout(updateFunc, 500);
+	}
+	
+	var typingStart = function()
+	{
+		clearTimeout(typingTimer);
+	}
+	
+	$(document).keyup(typingDone);
+	
+	$(document).keydown(typingStart);
 	
 	$(window).unload(updateFunc);
 			
