@@ -8,3 +8,10 @@ body {
   margin:0 auto;
   padding:4rem;
 }
+
+a:link{
+  color:#00FF00;
+}
+a:visited{
+  color:#00AA00;
+}
