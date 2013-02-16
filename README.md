@@ -20,7 +20,9 @@ HOWTO
 
 Notes
 =====
-Right now there is no versioning scheme and changes that are made on one device will not be automatically pushed to otherse. Therefore, it is a best practice to close CloudPad once you are done editing.
+Right now there is no versioning scheme and changes that are made on one device will not be automatically pushed to others. Therefore, it is a best practice to close CloudPad once you are done editing.
+
+Closing CloudPad will push the document to the server, so make sure to hit "refresh" to pull the latest data from the server if you know there have been changes from another device.
 
 FAQ
 ===
