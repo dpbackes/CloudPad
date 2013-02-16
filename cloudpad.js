@@ -33,7 +33,7 @@ window.onload = function() {
 				success: function(response) { 
 					//check to make sure the version hasn't been
 					//changed by another CloudPad instance
-					if(response.version == version)
+					if(response.version == version || !(response.version))
 					{
 						version = version + 1;
 						
